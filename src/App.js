@@ -40,7 +40,6 @@ function App() {
               <p>Humidity: {data?.main?.humidity} %</p>
               <p>Longitude: {data?.coord?.lon}</p>
               <p>Latitude: {data?.coord?.lat}</p>
-              {/* <p>{date}</p> */}
             </div>
           </>
         ) : (
@@ -62,8 +61,9 @@ function App() {
         </form>
         <div className="temp" style={{ marginTop: "20px" }}>
           <ul>
-            <li>Minimum Temperature: {data?.main?.temp_min}°</li>
-            <li>Maximum Temperature: {data?.main?.temp_max}°</li>
+            <p>Weather Details :</p>
+            <li>Min Temperature: {data?.main?.temp_min}°</li>
+            <li>Max Temperature: {data?.main?.temp_max}°</li>
             <li>Wind Speed: {data?.wind?.speed} Kmph</li>
             <li>Degree: {data?.wind?.deg}°</li>
             <li>Pressure: {data?.main?.pressure} Pascal</li>

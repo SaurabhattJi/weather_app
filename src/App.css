@@ -13,13 +13,13 @@ body {
   filter: drop-shadow(2px 4px 6px black);
 }
 input {
+  margin: auto;
   margin-top: 2rem;
   height: 2rem;
   width: 16rem;
   border: none;
   outline: none;
-  /* margin: 5px; */
-  text-align: end;
+  text-align: start;
   margin-bottom: 10px;
   background: transparent;
   border-bottom: 1px solid black;
@@ -89,6 +89,7 @@ form {
 .App .content p {
   color: #fff;
   font-size: 25px;
+  padding: 1rem;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 .App2 {
@@ -100,4 +101,12 @@ form {
 ul {
   margin-top: 30px;
   padding-left: 30px;
+}
+ul li {
+  padding: 1.2rem;
+}
+ul p {
+  font-weight: 900;
+  font-size: 18px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
