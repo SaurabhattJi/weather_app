@@ -23,53 +23,41 @@ function App() {
     // eslint-disable-next-line
   }, [search === data?.name]);
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   if (e.target.name.value === data?.name) {
-  //     setSearch(e.target.value);
-  //   } else {
-  //     console.log("error in submit");
-  //   }
-  // };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSearch(e.target.name.value); // whatever you typed into the input
+    setSearch(e.target.name.value);
   };
 
-  // const handleSubmit = (e) => {
-  //   if (e.target.name.value === data?.name) {
-  //     setSearch(e.target.name.value);
-  //   } else {
-  //     console.log("error in setting the value in input field");
-  //   }
-  // };
-
   return (
-    <div className="App">
-      {/* <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="name"
-          value={data?.name}
-          onChange={(e) => console.log(setSearch(e.target.value))}
-        />
-        <button>Search</button>
-      </form> */}
-      <form onSubmit={handleSubmit}>
-        <input type="text" name="name" />
+    <div className="container">
+      <div className="App">
+        {search === data?.name ? (
+          <>
+            <div className="content">
+              <h1>{data?.main?.temp}°</h1>
+              <h3>{data?.name}</h3>
+              <p>Humidity: {data?.main?.humidity} %</p>
+              <p>Longititute: {data?.coord?.lon}</p>
+              <p>Latitute: {data?.coord?.lat}</p>
+            </div>
+          </>
+        ) : (
+          <h4>! - No Data Found</h4>
+        )}
+      </div>
+      <div className="App2">
+        <form onSubmit={handleSubmit}>
+          <input type="text" name="name" placeholder="Search..." />
 
-        <input type="submit" value="submit" />
-      </form>
-      {search === data?.name ? (
-        <div className="content">
-          <h1>{data?.name}</h1>
-          <h3>Temperature: {data?.main?.temp}°C</h3>
-          <p>Humidity: {data?.main?.humidity} %</p>
+          <button type="submit" value="submit">
+            Search
+          </button>
+        </form>
+        <div className="temp" style={{ marginTop: "20px" }}>
+          <p>Minimum Temperature: {data?.main?.temp_min}°</p>
+          <p>Maximum Temperature: {data?.main?.temp_max}°</p>
         </div>
-      ) : (
-        <h4>! - No Data Found</h4>
-      )}
+      </div>
     </div>
   );
 }
