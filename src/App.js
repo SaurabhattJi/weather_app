@@ -28,6 +28,7 @@ function App() {
     setSearch(e.target.name.value);
   };
 
+  // const date = new Date();
   return (
     <div className="container">
       <div className="App">
@@ -37,8 +38,9 @@ function App() {
               <h1>{data?.main?.temp}°</h1>
               <h3>{data?.name}</h3>
               <p>Humidity: {data?.main?.humidity} %</p>
-              <p>Longititute: {data?.coord?.lon}</p>
-              <p>Latitute: {data?.coord?.lat}</p>
+              <p>Longitude: {data?.coord?.lon}</p>
+              <p>Latitude: {data?.coord?.lat}</p>
+              {/* <p>{date}</p> */}
             </div>
           </>
         ) : (
@@ -47,15 +49,24 @@ function App() {
       </div>
       <div className="App2">
         <form onSubmit={handleSubmit}>
-          <input type="text" name="name" placeholder="Search..." />
+          <input
+            type="text"
+            name="name"
+            placeholder="Search Here "
+            autocomplete="off"
+          />
 
           <button type="submit" value="submit">
             Search
           </button>
         </form>
         <div className="temp" style={{ marginTop: "20px" }}>
-          <p>Minimum Temperature: {data?.main?.temp_min}°</p>
-          <p>Maximum Temperature: {data?.main?.temp_max}°</p>
+          <ul>
+            <li>Minimum Temperature: {data?.main?.temp_min}°</li>
+            <li>Maximum Temperature: {data?.main?.temp_max}°</li>
+            <li>Wind Speed: {data?.wind?.speed} Kmph</li>
+            <li>Degree: {data?.wind?.deg}°</li>
+          </ul>
         </div>
       </div>
     </div>
