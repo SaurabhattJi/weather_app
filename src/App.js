@@ -28,7 +28,7 @@ function App() {
     setSearch(e.target.name.value);
   };
 
-  // const date = new Date();
+  // const date = new Date().toLocaleString;
   return (
     <div className="container">
       <div className="App">
@@ -53,7 +53,7 @@ function App() {
             type="text"
             name="name"
             placeholder="Search Here "
-            autocomplete="off"
+            autoComplete="off"
           />
 
           <button type="submit" value="submit">
@@ -66,6 +66,7 @@ function App() {
             <li>Maximum Temperature: {data?.main?.temp_max}°</li>
             <li>Wind Speed: {data?.wind?.speed} Kmph</li>
             <li>Degree: {data?.wind?.deg}°</li>
+            <li>Pressure: {data?.main?.pressure} Pascal</li>
           </ul>
         </div>
       </div>
